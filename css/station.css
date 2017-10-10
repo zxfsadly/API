@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+body { text-align: center; margin:0; padding:0; background: #FFF; font-size:12px; color:#000;}
+div,form,img,ul,ol,li,dl,dt,dd {margin: 0; padding: 0; border: 0;}
+h1,h2,h3,h4,h5,h6 { margin:0; padding:0;}
+table,td,tr,th{font-size:12px;}
+a:link {color: #000; text-decoration:none;}
+a:visited {color: #000;text-decoration:none;}
+a:hover {color: #000; text-decoration:underline;}
+a:active {color: #000;}
+
+input,img{ vertical-align:middle;}
+img{ border:none;}
+ol,ul,li{list-style:none;}
+div,li{ text-align:left;}
+input{ vertical-align:middle; margin:0px 0px 0px 0px;}
+a{blr:expression(this.onFocus=this.close());}
+a{blr:expression(this.onFocus=this.blur());}
+a:focus { outline:none; -moz-outline:none;}
+td{ text-align:left; font-weight:normal;}
+.font_r{ text-align:right;}
+a{text-decoration:none; cursor:pointer;}
+a{color:#1376BD;text-decoration:none; }
+.cx_from{ font-size:12px; margin-top:5px;}
+.cx_from td{ height:32px; color:#333333;}
+.cx_from span{ color:#FF0000;}
+.cx_from img{ border:none; vertical-align:middle;}
+.cx_from a{ text-decoration:none; color:#333333; margin-right:5px;}
+.cx_from a:hover{ text-decoration:underline;}
+
+.cityflip:link {FONT-SIZE: 12px; COLOR: #0055aa; TEXT-DECORATION: none}
+.cityflip:active {FONT-SIZE: 12px; COLOR: #0055aa; TEXT-DECORATION: none}
+.cityflip:visited {FONT-SIZE: 12px; COLOR: #0055aa; TEXT-DECORATION: none}
+.cityflip:hover {FONT-SIZE: 12px; COLOR: #0055aa; TEXT-DECORATION: underline}
+#form_cities {BORDER-RIGHT: #7F9DB9 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #7F9DB9 1px solid; DISPLAY: none; PADDING-LEFT: 2px; LEFT: 0px; PADDING-BOTTOM: 2px; BORDER-LEFT: #7F9DB9 1px solid; WIDTH: 100px; PADDING-TOP: 2px; BORDER-BOTTOM: #7F9DB9 1px solid; FONT-FAMILY: Arial; POSITION: absolute; TOP: 55px; BACKGROUND-COLOR: #ffffff;}
+#form_cities2 {position: absolute; top: 140px; left: 138.5px;display:none;FONT-FAMILY: Arial;}
+#top_cities { PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; COLOR: #666666; PADDING-TOP: 2px; BORDER-BOTTOM: gray 1px dashed}
+#panel_cities {COLOR: #0055aa; FONT-FAMILY: Arial; HEIGHT: 149px}
+#panel_cities DIV {PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 1px 0px; CURSOR: pointer; PADDING-TOP: 2px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: right}
+#panel_cities SPAN {PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; COLOR: #0055aa; PADDING-TOP: 1px}
+.cityline {BORDER-TOP: white 1px solid; COLOR: #666666; BORDER-BOTTOM: white 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: white}
+.citylineover {BORDER-TOP: #68a7f6 1px solid; BORDER-BOTTOM: #68a7f6 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: #c8e3fc}
+.lalign {FLOAT: right; TEXT-ALIGN: right}
+.ralign {FLOAT: left; TEXT-ALIGN: left}
+#flip_cities {PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; PADDING-TOP: 3px; TEXT-ALIGN: center}
+#flip_cities2 {PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; PADDING-TOP: 3px; TEXT-ALIGN: right}
+
+.clx{*zoom:1}
+.clx:after{clear:both;content:".";display:block;height:0;visibility:hidden;color:#131313}
+.com_hotresults{padding:0;margin:0;z-index:99998;text-align:center;font-size:12px;border:#aaa solid 1px;position:relative;background:#FFF}
+.com_hotresults ul{padding:0;margin:0;list-style-position:outside;list-style:none;z-index:100}
+.com_hotresults li{padding:2px 0 0 0;margin:0;height:25px;line-height:25px;float:left;cursor:pointer;display:block;font-size:12px;overflow:hidden;text-align:center;vertical-align:middle}
+.com_hotresults .ac_odd{background-color:#fff}
+.com_hotresults .ac_over{color:#316AC5;font-weight:bolder;background-color:#FFF}
+.com_hotresults .ac_title{margin:1px;margin-bottom:3px;border-width:0;border-bottom:dotted 1px #ddd;padding:6px 0 5px 5px;text-align:left;background-color:#E8F0F6;position:relative;z-index:100}
+.com_hotresults_en{padding:1px;margin:0;z-index:99998;text-align:center;border:#aaa solid 1px;position:relative;background:#FFF}
+.com_hotresults_en ul{padding:0;margin:0 0 5px 0;list-style-position:outside;list-style:none}
+.com_hotresults_en li{padding:2px 0 0 0;margin:0;height:25px;line-height:25px;float:left;cursor:pointer;display:block;font-size:12px;overflow:hidden;text-align:center;vertical-align:middle}
+.com_hotresults_en .ac_odd{background-color:#fff}
+.com_hotresults_en .ac_over{color:#316AC5;font-weight:bolder;background-color:#FFF}
+.com_hotresults_en .ac_title{margin:0;margin-bottom:3px;border-width:0;border-bottom:dotted 1px #ddd;padding:6px 0 5px 5px;text-align:left;background-color:#E8F0F6;position:relative;z-index:100}
+.com_hotresults .com_cbox_lb{width:5px;height:5px;position:absolute;left:-1px;bottom:-1px;_bottom:-12px;background-position:-32px -6px}
+.com_hotresults .com_cbox_rb{width:5px;height:5px;position:absolute;bottom:-1px;_bottom:-12px;right:-1px;background-position:-38px -6px}
+.com_hotresults a.ac_close{position:absolute;top:6px;right:9px;text-indent:-9999em;display:block;width:17px;font:1px/1px arial;height:17px;background:url(images/close_show_citys.jpg) 0}
+.com_hotresults a.ac_close:hover{background-position:0 -1px}
+.com_hotresults_en a.ac_close{position:absolute;top:10px;right:9px;text-indent:-9999em;display:block;width:17px;font:1px/1px arial;height:17px;background:url(images/close_show_citys.jpg)  0}
+.com_hotresults_en a.ac_close:hover{background-position:0 -1px}
+a.ac_close{position:absolute;top:6px;right:9px;text-indent:-9999em;display:block;width:17px;font:1px/1px arial;height:17px;background:url(images/close_show_citys.jpg)  0}
+a.ac_close:hover{background-position:0 -1px}
+.AbcSearch{margin-left:5px!important;margin-top:5px!important;border-bottom:#D7D7D7 solid 1px}
+.AbcSearch li{width:44px;padding:0 8px;color:#00206f}
+.AbcSearch .action{border:#d7d7d7 1px solid;font-weight:bold;color:#131313;border-bottom:#fff 1px solid;margin-bottom:-1px;position:relative}
+.AbcSearch_en{margin-left:5px!important;margin-top:5px!important;border-bottom:#D7D7D7 solid 1px}
+.AbcSearch_en li{width:auto;padding:0 6px;color:#00206f}
+.AbcSearch_en .action{border:#d7d7d7 1px solid;border-bottom:#fff 1px solid;font-weight:bold;color:#131313;margin-bottom:-1px;position:relative}
+ul.popcitylist{overflow:hidden;zoom:1;margin-left:6px;*margin-left:6px;margin-left:6px\9;_margin-left:1px}
+ul.popcitylist li{text-align:left;width:65px;overflow:hidden;margin:0 6px}
+#ac_odd {background-color: #FFFFFF;}
+#ac_over {color:#316AC5;font-weight:bolder;background-color:#FFF;}
+
+.input_20txt_gray{ height:20px; background:url(images/input_bg.gif) no-repeat left top; font-size:12px; color:#999; padding:0 2px; line-height:20px; border-top:1px solid #C2C2C2; border-left:1px solid #C2C2C2; border-botton:1px solid #EAEAEA; border-right:1px solid #EAEAEA; text-align:left;}
+.input_20txt{ height:20px; background:url(images/input_bg.gif) no-repeat left top; font-size:12px; color:#333333; padding:0 2px; line-height:20px; border-top:1px solid #C2C2C2; border-left:1px solid #C2C2C2; border-botton:1px solid #EAEAEA; border-right:1px solid #EAEAEA; text-align:left;}

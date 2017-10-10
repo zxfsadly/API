@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>API | 周半仙</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery -->
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <!-- Loading Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <!-- Loading Uikt -->
+    <link href="https://cdn.bootcss.com/uikit/3.0.0-beta.25/css/uikit.min.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <!-- Loading Base -->
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+
+<body style="background-image: url(images/background.png);">
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="api.html">API</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="api.html">Home</a></li>
+                    <li><a href="http://41671d.cn">周半仙的博客</a></li>
+                    <li><a href="movie.html">视频解析地址</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="travel.html">旅游</a><span class="navbar-unread">1</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="uk-container">
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div align="right" style="margin-right: 10px;">
+                <img src="images/home.png">
+            </div>
+                <h1 style="font-size: 80px;text-align: center;" id="sp_time"></h1>
+                <b><p style="font-size: 60px;text-align: center;" id="sp_hello"></p></b>
+            <h1 style="margin-left: 20px;">API</h1>
+            <b><p style="margin-left: 20px;">让上网简单些，让生活有趣些！</p></b>
+            <b><p style="margin-left: 20px;">Make The Internel Sample，Make The Life Interesting<button style="float: right;margin-right: 20px;" class = "btn btn-embossed btn-primary btn-danger" uk-toggle="target: #offcanvas-slide">公告</button></p></b>
+        </div>
+        <!-- card
+================================================== -->
+        <div class="uk-offcanvas-content">
+            <div id="offcanvas-slide" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar">
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    <h4><h3>First</h3>为什么选择手动点击之后才出现内容，因为我觉得每个人喜欢的都不一样，所以让你们自己选择想看的内容(我怎么会承认是技术问题？)</h4>
+                    <h4><h3>Second</h3>分享网站--正在调整为其他内容</h4>
+                    <h4><h3>Third</h3>新上线旅游</h4>
+                    <h4><h3>Fourth</h3>调整了知乎头条和豆瓣电影</h4>
+                </div>
+            </div>
+        </div>
+        <div class="uk-section uk-section-default uk-section-small uk-padding-remove-top" style="background-image: url(images/background.png)">
+            <div class="uk-container">
+                <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match " uk-grid>
+                    <!--知乎-->
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-hover" style="background: #EEE">
+                            <div class="uk-card-body">
+                                <div align="center"><img src="images/zhihu.png"></div>
+                                <div class="zhifu-font" align="center">
+                                    <a href="" id="zhihu0"></a>
+                                </div>
+                                <div class="zhifu-font" align="center">
+                                    <a href="" id="zhihu1"></a>
+                                </div>
+                                <div class="zhifu-font" align="center">
+                                    <a href="" id="zhihu2"></a>
+                                </div>
+                                <div class="zhifu-font" align="center">
+                                    <a href="" id="zhihu3"></a>
+                                </div>
+                                <div class="zhifu-font" align="center">
+                                    <a href="" id="zhihu4"></a>
+                                </div>
+                                <div class="zhifu-font" align="center">
+                                    <a href="" id="zhihu5"></a>
+                                </div>
+                                <div class="zhifu-font" align="center">
+                                    <a href="" id="zhihu6"></a>
+                                </div>
+                                <div class="zhifu-font" align="center">
+                                    <a href="" id="zhihu7"></a>
+                                </div>
+                                <div align="right">
+                                    <a href="" id="more"></a>
+                                </div>
+                            </div>
+                            <hr>
+                            <div align="center">
+                                <button style="" class="btn btn-info" onclick="gonews()">显示</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--知乎结束-->
+                    <!--网盘-->
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-hover" style="background: #EEE">
+                            <div class="uk-card-body">
+                                <div align="center"><img src="images/search.png"></div>
+                                <br>
+                                <input type="search" class="form-control" placeholder="查找内容" id="content" style="margin-top: 20px;">
+                                <form style="margin-top:20px;">
+                                    <select id="search" class="form-control" style="background: #f5f5f5;">
+                                        <option value="https://wangpan007.com/share/kw" selected="selected">网盘007(推荐)</option>
+                                        <option value="http://www.panc.cc/s/">胖次搜索</option>
+                                        <option value="http://www.xilinjie.com/s?q=">西林街</option>
+                                        <option value="http://www.bdsola.com/zt/">搜啦</option>
+                                        <option value="http://www.daimugua.com/search.aspx?q=">呆木瓜</option>
+                                    </select>
+                                </form>
+                                <div align="center" style="margin-top:10px;">
+                                    <button class="btn btn-inverse" onclick="search()">查找</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--网盘结束-->
+                    <!--电影评分查询-->
+                    <div>
+                        <div class=" uk-card uk-card-default uk-card-hover" style="background: #EEE">
+                            <div class="uk-card-body">
+                                <div align="center"><img src="images/pingfen.png"></div>
+                                <br>
+                                <b><p style="color: white">点击电影名字跳转豆瓣界面</p></b>
+                                <div class="uk-grid" data-uk-grid-match>
+                                    <div class="uk-width-1-2">
+                                        <b><a style="color: #555" id="aver0"></a></b>
+                                        <b><a style="color: #555" id="aver1"></a></b>
+                                        <b><a style="color: #555" id="aver2"></a></b>
+                                        <b><a style="color: #555" id="aver3"></a></b>
+                                        <b><a style="color: #555" id="aver4"></a></b>
+                                        <b><a style="color: #555" id="aver5"></a></b>
+                                    </div>
+                                    <div class="uk-width-1-2 uk-text-truncate">
+                                        <b><a style="color: #555" id="na0"></a></b>
+                                        <b><a style="color: #555" id="na1"></a></b>
+                                        <b><a style="color: #555" id="na2"></a></b>
+                                        <b><a style="color: #555" id="na3"></a></b>
+                                        <b><a style="color: #555" id="na4"></a></b>
+                                        <b><a style="color: #555" id="na5"></a></b>
+                                    </div>
+                                </div>
+                                <p uk-margin>
+                                    <form id="myForm1" action="" method="post">
+                                        <b style="color: white">查看豆瓣上评分</b>
+                                        <input type="text" name="movie" value="喜欢你">
+                                    </form>
+                                </p>
+                                <div align="center">
+                                    <button class="btn btn-inverse" id="send">查询</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--电影评分查询结束-->
+                </div>
+                <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match " uk-grid>
+                    <!--一席-->
+                    <div>
+                        <div class="uk-card uk-card-default" style="background: #EEE">
+                            <div class="uk-card-header">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                        <img class="uk-border-circle" width="40" height="40" id="yixi-img" src="">
+                                    </div>
+                                    <div class="uk-width-expand">
+                                        <h4 class="uk-card-title uk-margin-remove-bottom" id="yixi-title">一席标题</h4>
+                                        <p class="uk-text-meta uk-margin-remove-top">
+                                            <time id="yixi-time">2017年</time>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-card-body">
+                                <p id="yixi-desc">听君一席话，胜读十年书</p>
+                                <a style="float: right;" id="yixi-video" href="">视频链接</a>
+                            </div>
+                            <div class="uk-card-footer">
+                                <div align="center">
+                                    <button class="uk-button uk-button-default" onclick="yixi()"><b>一席</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--一席-->
+                    <!--藏头诗-->
+                    <div>
+                        <div class="uk-card uk-card-default" style="background: #EEE">
+                            <div class="uk-card-header">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                    </div>
+                                    <div class="uk-width-expand">
+                                        <h4 class="uk-card-title uk-margin-remove-bottom" id="yixi-title">藏头诗</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-card-body">
+                                <form align="center" id="myForm2" method="get">
+                                    <input type="text" name="cts-key">
+                                    <br>
+                                    <hr>
+                                    <select name="cts-num" id="cts-num">
+                                        <option value="5">五言</option>
+                                        <option value="7">七言</option>
+                                    </select>
+                                    <select name="cts-type" id="cts-type">
+                                        <option value="1">藏头</option>
+                                        <option value="2">藏尾</option>
+                                        <option value="3">藏中</option>
+                                    </select>
+                                </form>
+                                <a id="cts"></a>
+                            </div>
+                            <div class="uk-card-footer">
+                                <div align="center">
+                                    <button class="btn btn-inverse" id="go"><b>GO</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--藏头诗结束-->
+                    <!--直播链接-->
+                    <div>
+                        <div class="uk-card uk-card-default" style="background: #EEE">
+                            <div class="uk-card-header">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                    </div>
+                                    <div class="uk-width-expand">
+                                        <h4 class="uk-card-title uk-margin-remove-bottom" id="yixi-title">B站与熊猫</h4>
+                                        <p class="uk-text-meta uk-margin-remove-top">
+                                            <a>py了B站和熊猫直播</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-card-body">
+                                <a id="bname0" href=""></a>
+                                <a id="bname1" href=""></a>
+                                <a id="bname2" href=""></a>
+                                <a id="bname3" href=""></a>
+                                <a id="pname0" href=""></a>
+                                <a id="pname1" href=""></a>
+                                <a id="pname2" href=""></a>
+                                <a id="pname3" href=""></a>
+                            </div>
+                            <div class="uk-card-footer">
+                                <div align="center">
+                                    <button class="btn btn-inverse" id="py"><b>PY</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--直播链接结束-->
+                </div>
+            </div>
+        </div>
+        <!-- /card -->
+    </div>
+    <!-- /container -->
+    <!-- footer
+================================================== -->
+    <footer class="bottom-bar">
+        All Rights Reserved © 2017 | <a href=" ">制作BY周半仙</a> | <a href="41671d.cn/web/api">主页</a>
+    </footer>
+    <!-- /footer -->
+    <!-- javascript
+================================================== -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?8f61a77a98d5169a3b87dbdcd945864c";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <script>
+    $(function() {
+        $("#send").click(function() {
+            var cont = $("input").serialize();
+            $.ajax({
+                url: 'php/movies.php',
+                type: 'post',
+                dataType: 'json',
+                data: cont,
+                success: function(data) {
+                    for ($i = 0; $i < 6; $i++) {
+                        $("#aver" + $i).html("评分" + data.aver[$i] + "<br>");
+                        $("#na" + $i).html(data.na[$i] + "<br>");
+                        $("#na" + $i).attr("href", "https://movie.douban.com/subject/" + data.id[$i] + "/?from=showing");
+                    }
+                }
+            });
+        });
+    });
+    </script>
+    <script>
+    $(function() {
+        $("#go").click(function() {
+            var cont1 = $("select").serialize() + $("input").serialize();
+            $.ajax({
+                url: 'php/cts.php',
+                type: 'get',
+                dataType: 'json',
+                data: cont1,
+                success: function(data) {
+                    $("#cts").html(data.cts[0]);
+                }
+            });
+        });
+    });
+    </script>
+    <script>
+    $(function() {
+        $("#py").click(function() {
+            $.ajax({
+                url: 'php/bpanda.php',
+                dataType: 'json',
+                success: function(data) {
+                    for ($i = 0; $i < 4; $i++) {
+                        $("#bname" + $i).attr("href", "http://live.bilibili.com/" + data.blink[$i]);
+                        $("#bname" + $i).html(data.bname[$i] + " " + data.btype[$i] + "<br>" );
+                        $("#pname" + $i).attr("href", "http://pandatv.com/" + data.plink[$i]);
+                        $("#pname" + $i).html(data.pname[$i] + " " + data.ptype[$i] + "<br>" );
+                    }
+                }
+            });
+        });
+    });
+    </script>
+    <!-- /script -->
+    <!-- Flat-UI -->
+    <script src="js/flat-ui.min.js"></script>
+    <!-- Uikit -->
+    <script src="https://cdn.bootcss.com/uikit/3.0.0-beta.25/js/uikit.min.js"></script>
+    <!-- Self-->
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/movie.js"></script>
+    <script type="text/javascript" src="js/time.js"></script>
+    <script src="php/news.php"></script>
+    <script src="php/yixi.php"></script>
+</body>
+
+</html>

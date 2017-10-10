@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>校园电视台 | 报名</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery -->
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <!-- Loading Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <!-- Loading Uikt -->
+    <link href="https://cdn.bootcss.com/uikit/3.0.0-beta.25/css/uikit.min.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <!-- Loading Base -->
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+
+<body style="background-image: url(images/background.png);">
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="api.html">TV</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="">校园电视台</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="">报名界面</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="uk-container">
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div align="right">
+                <img src="images/home.png">
+            </div>
+            <h1 style="margin-left: 20px;">报名</h1>
+            <b><p style="margin-left: 20px;">校园电视台</p></b>
+            <b><p style="margin-left: 20px;">梦开始的地方<button style="float: right;margin-right: 20px;" class = "btn btn-embossed btn-primary btn-danger" uk-toggle="target: #offcanvas-slide">提示</button></p></b>
+        </div>
+        <!-- card
+================================================== -->
+        <div class="uk-offcanvas-content">
+            <div id="offcanvas-slide" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar">
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    <h4><h3>First</h3>填入你的个人信息，然后选择部门，之后点提交就OK了！</h4>
+                </div>
+            </div>
+        </div>
+        <div class="uk-section uk-section-default uk-section-small uk-padding-remove-top" style="background-image: url(images/background.png)">
+            <div class="uk-container">
+                <div class="uk-child-width-1-1@m uk-grid-small uk-grid-match " uk-grid>
+                    <!--知乎-->
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-hover"  style="background: #EEE">
+                            <div class="uk-card-body">
+                                <div align="center">
+                                	<form method="post" action="php/conn.php">
+                                		姓名：<input type="" name="stu-name" id="stu-name">
+                                		<hr>
+                                		电话：<input type="" name="stu-number" id="stu-number">
+                                		<hr>
+                                		学院：<input type="" name="stu-school" id="stu-school">
+                                		<hr>
+                                		应征部门：<select name="stu-department" id="stu-department">
+                                			<option value="技术部">技术部</option>
+                                			<option value="播音部">播音部</option>
+                                			<option value="宣策部">宣策部</option>
+                                		</select>
+                                		<hr>
+                                		<input type="submit" value="提交">
+                                	</form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--知乎结束-->
+            </div>
+        </div>
+        <!-- /card -->
+    </div>
+    <!-- /container -->
+    <!-- footer
+================================================== -->
+    <footer class="bottom-bar">
+        All Rights Reserved © 2017 | <a href=" ">校园电视台</a> | <a href="">周半仙制作</a>
+    </footer>
+    <!-- /footer -->
+    <!-- javascript
+================================================== -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?8f61a77a98d5169a3b87dbdcd945864c";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <!-- /script -->
+    <!-- Flat-UI -->
+    <script src="js/flat-ui.min.js"></script>
+    <!-- Uikit -->
+    <script src="https://cdn.bootcss.com/uikit/3.0.0-beta.25/js/uikit.min.js"></script>
+    <!-- Self-->
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/movie.js"></script>
+    <script src="php/movies.php"></script>
+    <script src="php/news.php"></script>
+    <script src="php/yixi.php"></script>
+</body>
+
+</html>

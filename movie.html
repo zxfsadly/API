@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?8f61a77a98d5169a3b87dbdcd945864c";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>VIP视频解析 | 周半仙</title>
+    <!-- jQuery -->
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <!-- Loading Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <!-- Loading Uikt -->
+    <link href="https://cdn.bootcss.com/uikit/3.0.0-beta.25/css/uikit.min.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <!-- Loading Base -->
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+<!-- NAVBAR
+================================================== -->
+
+<body style="background-image: url(images/background.png);">
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="api.html">API</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="api.html">Home</a></li>
+                    <li><a href="http://41671d.cn">周半仙的博客</a></li>
+                    <li><a href="movie.html">视频解析地址</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="travel.html">旅游</a><span class="navbar-unread">1</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="uk-container">
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div align="right" style="margin-right: 10px;">
+                <img src="images/home.png">
+            </div>
+            <h1 style="font-size: 80px;text-align: center;" id="sp_time"></h1>
+            <b><p style="font-size: 60px;text-align: center;" id="sp_hello"></p></b>
+            <h1 style="margin-left: 20px;">API</h1>
+            <b><p style="margin-left: 20px;">让上网简单些，让生活有趣些！</p></b>
+            <b><p style="margin-left: 20px;">Make The Internel Sample，Make The Life Interesting<button style="float: right;margin-right: 20px;" class = "btn btn-embossed btn-primary btn-danger" uk-toggle="target: #offcanvas-slide">公告</button></p></b>
+        </div>
+        <!-- card
+================================================== -->
+        <div id="offcanvas-slide" uk-offcanvas="overlay: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <h3>使用说明</h3>
+                <h4><h3>First Step:</h3><b>在播放地址栏填入你想要看的付费电影或综艺节目的链接</b></h4>
+                <h4><h3>Second Step:</h3><b>然后选择对应接口</b></h4>
+                <h4><h3>Third Step:</h3><b>然后点提交</b></h4>
+                <h4><h3>Tips:</h3><b>如果长时间未播放，请选择其他接口</b></h4>
+            </div>
+        </div>
+    </div>
+    <div class="uk-section uk-section-default uk-section-small uk-padding-remove-top" style="background-image: url(images/background.png)">
+        <div class="uk-container">
+            <!--电影VIP解析-->
+            <div class="uk-child-width-1-1@m" uk-grid>
+                <div>
+                    <div class=" uk-card uk-card-default uk-card-hover">
+                        <div class="uk-card-body">
+                            <div onload="movie()">
+                                <iframe src="" id="player" width="100%" height="300px" allowTransparency="true" frameborder="0" scrolling="no"></iframe>
+                                <div style="text-align:center;">
+                                    <span style="width: 80px;"><h3>选择接口</h3></span>
+                                    <select id="api" class="s_center">
+                                        <option value="http://jx.vgoodapi.com/jx.php?url=">【乐视Le】</option>
+                                        <option value="http://vip.jlsprh.com/index.php?url=">【芒果TV】</option>
+                                        <option value="http://www.82190555.com/video.php?url=">【优酷Youku】</option>
+                                        <option value="http://www.dgua.xyz/webcloud/?url=">【爱奇艺稳定】</option>
+                                        <option value="http://api2.vparse.org?url=">【腾讯稳定】</option>
+                                        <option value="http://000o.cc/jx/ty.php?url=">【土豆稳定】</option>
+                                        <option value="http://api.91exp.com/svip/?url=">【搜狐】</option>
+                                        <option value="http://api.662820.com/xnflv/index.php?url=">【PPTV解析】</option>
+                                        <option value="http://v.72du.com/api/?url=" selected="selected">【稳定通用1】</option>
+                                        <option value="http://vip.jlsprh.com/index.php?url=">【稳定通用2】</option>
+                                        <option value="http://www.wmxz.wang/video.php?url=">【稳定通用3】</option>
+                                        <option value="http://api.47ks.com/webcloud/?v=">【腾讯1080P】
+                                        </option>
+                                    </select>
+                                </div>
+                                <hr>
+                                <div style="width: 100%; text-align:center;">
+                                    <span style="width: 80px;"><h3>播放地址</h3></span>
+                                    <input style="margin-top:10px;" type="search" placeholder="播放地址" id="url">
+                                    <input type="submit" onclick="movie()" " value="提交 ">
+                                	</div>
+                            	</div>
+                        	</div>
+                    	</div>
+                	</div>
+            	</div>
+      	</div>
+    </div>
+    <!-- /card -->
+    <!-- footer
+    ================================================== -->
+    <footer class="bottom-bar ">
+        All Rights Reserved © 2017 | <a href=" ">制作BY周半仙</a> | <a href="api.html ">主页</a>
+    </footer>
+    <!-- /footer -->
+  </body>
+    <!-- Flat-UI -->
+    <script src="js/flat-ui.min.js "></script>
+    <!-- Uikit -->
+    <script src="https://cdn.bootcss.com/uikit/3.0.0-beta.25/js/uikit.min.js "></script>
+    <!-- Self -->
+    <script type="text/javascript " src="js/movie.js "></script>
+    <script type="text/javascript" src="js/time.js"></script>
+</html>

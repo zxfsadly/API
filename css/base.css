@@ -1,0 +1,32 @@
+body {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        min-height: auto;
+        padding-top: 70px;
+    }
+
+.bottom-bar {
+        position: relative;
+        text-align: center;
+        font-size: 1em;
+        text-transform: uppercase;
+        background: #ecf0f1;
+        padding: 15px 0;
+    }
+.zhifu-font {
+    margin-top: 10px;
+    white-space:nowrap; 
+    width:20em; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    font-size: 13px;
+}
+.s_center {
+    width: auto;
+    padding: 0 5%;
+    margin: 0;
+}
+.s_center option{
+    text-align: center;
+}

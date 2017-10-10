@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>旅游 | 周半仙</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Station -->
+    <link href="css/station.css" rel="stylesheet" type="text/css">
+    <!-- jQuery -->
+    <script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <!-- Loading Station -->
+    <link href="css/station.css" rel="stylesheet" type="text/css">
+    <!-- Loading Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+    <!-- Loading Uikt -->
+    <link href="https://cdn.bootcss.com/uikit/3.0.0-beta.25/css/uikit.min.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <!-- Loading Base -->
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+</head>
+
+<body style="background-image: url(images/background.png);">
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="api.html">API</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="api.html">Home</a></li>
+                    <li><a href="http://41671d.cn">周半仙的博客</a></li>
+                    <li><a href="movie.html">视频解析地址</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="travel.html">旅游</a><span class="navbar-unread">1</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="uk-container">
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div style="margin-right: 10px;text-align: right;">
+                <img src="images/home.png">
+            </div>
+            <h1 style="font-size: 80px;text-align: center;" id="sp_time"></h1>
+            <b><p style="font-size: 60px;text-align: center;" id="sp_hello"></p></b>
+            <h1 style="margin-left: 20px;">API</h1>
+            <b><p style="margin-left: 20px;">让上网简单些，让生活有趣些！</p></b>
+            <b><p style="margin-left: 20px;">Make The Internel Sample，Make The Life Interesting<button style="float: right;margin-right: 20px;" class = "btn btn-embossed btn-primary btn-danger" uk-toggle="target: #offcanvas-slide">公告</button></p></b>
+        </div>
+        <!-- card
+================================================== -->
+        <div class="uk-offcanvas-content">
+            <div id="offcanvas-slide" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar">
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    <h4><h3>First</h3>获取起点站和终点站的站点码，然后填入！</h4>
+                    <h4><h3>Second</h3>日期必须是今天或者之后的日期。如果车票只显示一部分，可以多点几次查询。</h4>
+                    <h4><h3>Third</h3>可查询到车票价格、车次号、天气</h4>
+                    <h4><h3>Fourth</h3>界面UI调整中，功能正在添加，尽情期待！</h4>
+                </div>
+            </div>
+        </div>
+        <div class="uk-section uk-section-default uk-section-small uk-padding-remove-top" style="background-image: url(images/background.png)">
+            <div class="uk-container">
+                <div class="uk-child-width-1-1@m uk-grid-small uk-grid-match " uk-grid>
+                    <!--price-->
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-hover" style="background:#EEE;margin-bottom:20px;">
+                            <div class="uk-card-body" align="center">
+                                <form id="myForm1" action="" method="get" align="center">
+                                    <div style="float: left;line-height: 42px;">时间格式：年-月-日</div>
+                                    <div style="width:500px;" class="uk-container" style="float: left;display: block;">
+                                        <input type="text" name="date" class="form-control" value="2017-09-24">
+                                    </div>
+                                    <!-- Station Code -->
+                                    <div style="top:0;left:0;z-index:1000;POSITION: absolute;">
+                                        <div style="overflow: hidden; left: 323px; top: 90.5px; display: none;" id="form_cities">
+                                            <div id="top_cities">简码/汉字或↑↓</div>
+                                            <div id="panel_cities"></div>
+                                            <div style="display: block;" id="flip_cities">
+                                                «&nbsp;向前&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="" class="cityflip" onclick="city_showlist(1);return false;">向后&nbsp;»</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="top:0;left:0;z-index:1000;POSITION: absolute;">
+                                        <div style="overflow: hidden; display: none; left: 323px; top: 90.5px;" id="form_cities2">
+                                            <div id="top_cities1"> </div>
+                                            <div id="panel_cities2"></div>
+                                        </div>
+                                    </div>
+                                    <table class="cx_from" border="0" cellpadding="0" cellspacing="0" width="600">
+                                        <tbody>
+                                            <tr>
+                                                <td class="font_r" width="97px"><span>*</span>出发地：</td>
+                                                <td width="100px">
+                                                    <input name="from-station" id="fromStation" type="hidden" />
+                                                    <input name="fromStationText" maxlength="15" value="简码/汉字" id="fromStationText" style="width:100px;" class="input_20txt_gray" type="text" />
+                                                </td>
+                                                <td class="font_r" width="64px"><span>*</span>目的地：</td>
+                                                <td width="100px">
+                                                    <input name="to-station" id="toStation" type="hidden" />
+                                                    <input name="toStationText" maxlength="15" value="简码/汉字" id="toStationText" style="width:100px;" class="input_20txt_gray" type="text" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <div>
+                                    <table class="uk-table uk-table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>出发站</th>
+                                                <th>终点站</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td id="map_from"></td>
+                                                <td id="map_to"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="uk-table ">
+                                        <thead>
+                                            <tr>
+                                                <th>高铁商务座的票价</th>
+                                                <th>高铁一等座的票价</th>
+                                                <th>高铁二等座的票价</th>
+                                                <th>高铁无座的票价</th>
+                                                <th>动车商务座的票价</th>
+                                                <th>动车一等座的票价</th>
+                                                <th>动车二等座的票价</th>
+                                                <th>动车无座的票价</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td id="A9G"></td>
+                                                <td id="MG"></td>
+                                                <td id="OG"></td>
+                                                <td id="WZG"></td>
+                                                <td id="A9D"></td>
+                                                <td id="MD"></td>
+                                                <td id="OD"></td>
+                                                <td id="WZD"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div align="center" style="margin-top:10px;">
+                                    <button class="btn btn-info" id="price"><b>查询</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--price结束-->
+                    <!--天气查询-->
+                    <div>
+                        <div class=" uk-card uk-card-default uk-card-hover" style="background: #EEE">
+                            <div class="uk-card-body">
+                                <div align="center">
+                                    <form id="myForm2" action="" method="get">
+                                        查询当地天气
+                                        <input type="text" name="city" value="南京">
+                                    </form>
+                                    <div>
+                                        <div class="uk-overflow-container">
+                                            <table class="uk-table uk-table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>日期</th>
+                                                        <th>最高温度</th>
+                                                        <th>最低温度</th>
+                                                        <th>天气</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td id="weather-date0"></td>
+                                                        <td id="weather-high0"></td>
+                                                        <td id="weather-low0"></td>
+                                                        <td id="weather-type0"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="weather-date1"></td>
+                                                        <td id="weather-high1"></td>
+                                                        <td id="weather-low1"></td>
+                                                        <td id="weather-type1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="weather-date2"></td>
+                                                        <td id="weather-high2"></td>
+                                                        <td id="weather-low2"></td>
+                                                        <td id="weather-type2"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="weather-date3"></td>
+                                                        <td id="weather-high3"></td>
+                                                        <td id="weather-low3"></td>
+                                                        <td id="weather-type3"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td id="weather-date4"></td>
+                                                        <td id="weather-high4"></td>
+                                                        <td id="weather-low4"></td>
+                                                        <td id="weather-type4"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div align="center">
+                                    <button class="btn btn-info" id="weather"><b>查询天气</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--天气查询结束-->
+                </div>
+            </div>
+        </div>
+        <!-- /card -->
+    </div>
+    <!-- /container -->
+    <!-- footer
+================================================== -->
+    <footer class="bottom-bar">
+        All Rights Reserved © 2017 | <a href=" ">制作BY周半仙</a> | <a href="41671d.cn/web/api">主页</a>
+    </footer>
+    <!-- /footer -->
+    <!-- javascript
+================================================== -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?8f61a77a98d5169a3b87dbdcd945864c";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <script>
+    $(function() {
+        $("#price").click(function() {
+            var cont = $("input").serialize();
+            $.ajax({
+                url: 'php/price.php',
+                type: 'get',
+                dataType: 'json',
+                data: cont,
+                success: function(data) {
+                    $("#train_no").html(data.train_no);
+                    $("#station_train_code").html(data.station_train_code);
+                    $("#OG").html(data.OG);
+                    $("#WZG").html(data.WZG);
+                    $("#MG").html(data.MG);
+                    $("#A9G").html(data.A9G);
+                    $("#OD").html(data.OD);
+                    $("#WZD").html(data.WZD);
+                    $("#MD").html(data.MD);
+                    $("#A9D").html(data.A9D);
+                    $("#map_from").html(data.map_from);
+                    $("#map_to").html(data.map_to);
+                }
+            });
+        });
+    });
+    </script>
+    <script>
+    $(function() {
+        $("#weather").click(function() {
+            var cont = $("input").serialize();
+            $.ajax({
+                url: 'php/weather.php',
+                type: 'get',
+                dataType: 'json',
+                data: cont,
+                success: function(data) {
+                    for ($i = 0; $i < 5; $i++) {
+                        $("#weather-date" + $i).html(data.weather_date[$i]);
+                        $("#weather-high" + $i).html(data.weather_high[$i]);
+                        $("#weather-low" + $i).html(data.weather_low[$i]);
+                        $("#weather-type" + $i).html(data.weather_type[$i]);
+                    }
+                }
+            });
+        });
+    });
+    </script>
+    <!-- /script -->
+    <!-- Flat-UI -->
+    <script src="js/flat-ui.min.js"></script>
+    <!-- Uikit -->
+    <script src="https://cdn.bootcss.com/uikit/3.0.0-beta.25/js/uikit.min.js"></script>
+    <!-- Self-->
+    <script src="js/station_name.js" type="text/javascript"></script>
+    <script src="js/favorite_name.js" type="text/javascript"></script>
+    <script src="js/city_name.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+    <script type="text/javascript" src="js/movie.js"></script>
+    <script type="text/javascript" src="js/time.js"></script>
+    <script src="php/movies.php"></script>
+    <script src="php/news.php"></script>
+    <script src="php/yixi.php"></script>
+</body>
+
+</html>
