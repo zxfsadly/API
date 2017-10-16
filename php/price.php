@@ -1,6 +1,6 @@
 <?php
    header("Content-type: text/html; charset=utf-8");
-	$url ="https://kyfw.12306.cn/otn/leftTicket/queryX?leftTicketDTO.train_date={$_GET["date"]}&leftTicketDTO.from_station={$_GET["from-station"]}&leftTicketDTO.to_station={$_GET["to-station"]}&purpose_codes=ADULT";
+	$url ="https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date={$_GET["date"]}&leftTicketDTO.from_station={$_GET["from-station"]}&leftTicketDTO.to_station={$_GET["to-station"]}&purpose_codes=ADULT";
 	$file = "";
 		$opts = [
 			"http" => [
